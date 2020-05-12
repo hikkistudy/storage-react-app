@@ -38,7 +38,51 @@
 }
 
 .container-fluid {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
 }
+
+.navbar-expand-lg {
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 1.5rem 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  min-width: 10rem;
+}
+
+.form-delete .form-row {
+  //justify-content: flex-end;
+}
+
+.form-delete .form-row .btn {
+  max-width: 16%;
+}
+
+.form-row {
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0.8rem 0;
+}
+
+.form-row .btn {
+  min-width: inherit;
+  margin-top: 1rem;
+}
+
+@media (max-width: 321px) {
+  .btn {
+    min-width: inherit;
+  }
+  .storage-nav {
+    flex-direction: column;
+  }
+}
+
+

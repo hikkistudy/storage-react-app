@@ -10,11 +10,22 @@ class AuthProvider extends Component {
         isAuthorized: false
     };
 
-    authorize = () => {
-        this.setState({isAuthorized: true}, () => {
-            this.props.history.push("/protected");
+    authorize = (apiResp) => {
+        this.setState({isAuthorized: apiResp}, () => {
+            this.props.history.push("/");
+            this.props.value.auth(true);
         });
     };
+
+    checkCurrentUser = () => {
+        if (localStorage.getItem('curUser')) {
+            this.authorize(true);
+        }
+    };
+
+    componentDidMount() {
+        this.checkCurrentUser();
+    }
 
     render() {
         const {isAuthorized} = this.state;
